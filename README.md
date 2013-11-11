@@ -13,8 +13,8 @@ My computer is an old HP Pavilion dv6. I could not get the Camera working on a L
 
 Strange Issues:
 =====================
-OpenNI and Python:
-    *Color Streams appear strange it they are stopped, and then restarted.   
-    *Color and Depth Syncing is cannot be activated   
-        -> the function takes no parameters, but complains in the OpenNI code that a aparameter is wrong   
-    *Color and Depth can be read at the same time in Quarter size, (320,240, :), or if depth is (640, 480, 1), but not if color is (640, 480, 3), regardless of what depth is. Note: Color can be read at this size by itself.   
+OpenNI and Python:   
+    *  Color Streams appear strange it they are stopped, and then restarted.   
+    *  Color and Depth Syncing cannot be activated?   
+         ->   the function takes no parameters, but complains in the OpenNI code that a aparameter is wrong   
+    *  Color and Depth can be read at the same time in Quarter size, (320,240, :), or if depth is (640, 480, 1), but not if color is (640, 480, 3), regardless of what depth is. Note: Color can be read at this size by itself.   
