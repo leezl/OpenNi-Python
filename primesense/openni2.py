@@ -296,6 +296,7 @@ class Device(HandleObject):
     def get_property(self, property_id, rettype):
         ret = rettype()
         size = ctypes.c_int(ctypes.sizeof(ret))
+        #oniStreamGetProperty(self._handle, property_id, ctypes.byref(ret), ctypes.byref(size))
         c_api.oniDeviceGetProperty(self._handle, property_id, ctypes.byref(ret), ctypes.byref(size))
         return ret
     def get_int_property(self, property_id):
@@ -313,7 +314,13 @@ class Device(HandleObject):
     def is_command_supported(self, command_id):
         return bool(c_api.oniDeviceIsCommandSupported(self._handle, command_id))
 
+    '''
+    The following do not appear to be working: 
+        *get throws error, takes no input, but still crashes...
+        *set throws same error, regardless of mode passed
+    '''
     def is_image_registration_mode_supported(self, mode):
+        #mode = IMAGE_REGISTRATION_DEPTH_TO_COLOR for example
         return bool(c_api.oniDeviceIsImageRegistrationModeSupported(self._handle, mode))
     def get_image_registration_mode(self):
         return self.get_property(c_api.ONI_DEVICE_PROPERTY_IMAGE_REGISTRATION, c_api.OniImageRegistrationMode)
@@ -588,6 +595,9 @@ def convert_depth_to_color(depthStream, colorStream, depthX, depthY, depthZ):
 def get_bytes_per_pixel(format):
     c_api.oniFormatBytesPerPixel(format)
 
+'''
+Inherit from this class to make your own listerner? Fill in the Implement Me functions?
+'''
 class DeviceListener(HandleObject):
     def __init__(self):
         handle = c_api.OniCallbackHandle()
