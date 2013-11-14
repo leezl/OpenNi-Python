@@ -7,6 +7,8 @@ from primesense import _openni2 as c_api
 import numpy as np
 #matplotlib, for temporary display to check the images
 import matplotlib.pyplot as plt
+#alternate: 
+#import cv2 #can display uint16 images (correctly load and store depth)
 
 #takes frame data, and the type it is and displays the image
 #frame_data = frame.get_buffer_as_blah(); thisType = numpy.someType
