@@ -1,12 +1,13 @@
 '''
 Short test file, may get longer
 '''
-from primesense import openni2
-from primesense import _openni2 as c_api
+#from primesense import openni2
+#from primesense import _openni2 as c_api
 #numpy, for matrix manipulation fo the images
-import numpy as np
+#import numpy as np
 #matplotlib, for temporary display to check the images
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
+#NOTE: Matplotlib will not display depth correctly: uint16 is made into uint8, so overflow cause stripes
 
 '''
 Starter test program
@@ -16,6 +17,8 @@ from primesense import openni2
 from primesense import _openni2 as c_api
 import numpy as np
 import matplotlib.pyplot as plt
+#alternate to matplotlib:
+#import cv2 #opencv, which uses numpy arrays for images anyway: can handle uint16 depth
 
 #takes frame data, and the type it is and displays the image
 #frame_data = frame.get_buffer_as_blah(); thisType = numpy.someType
