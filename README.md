@@ -11,6 +11,10 @@ Carmine 1.08 Camera
 
 My computer is an old HP Pavilion dv6. I could not get the Camera working on a Lenovo Y500: After fixing the permissions errors (had to be root), I had timeout issues which may still be usb setting problems.
 
+Oddly this error went away after several restarts...
+
+New Problem: Arch Linux install
+
 Strange Issues:
 =====================
 OpenNI and Python:   
